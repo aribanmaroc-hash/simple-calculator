@@ -73,12 +73,28 @@ function compute(a, b, op) {
 function inputEquals() {
   if (operator === null || previous === null || current === "Error") return;
   const value = parseFloat(current);
+  const opSymbol = { "+": "+", "-": "−", "*": "×", "/": "÷" }[operator] || operator;
+  const expression = `${previous} ${opSymbol} ${value}`;
   const result = compute(previous, value, operator);
   current = formatResult(result);
   previous = null;
   operator = null;
   waitingForOperand = true;
   updateDisplay();
+  saveToSheet(expression, current);
+}
+
+async function saveToSheet(expression, result) {
+  if (result === "Error") return;
+  try {
+    await fetch("/api/save", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ expression, result }),
+    });
+  } catch (e) {
+    console.error("Failed to save to Google Sheets:", e);
+  }
 }
 
 function clearAll() {

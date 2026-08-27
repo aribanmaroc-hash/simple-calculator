@@ -2,5 +2,21 @@
   "previewPort": 3000,
   "healthPath": "/",
   "startCommand": "docker compose -f docker-compose.base44.yml up -d",
-  "secrets": []
+  "secrets": [
+    {
+      "name": "GOOGLE_SERVICE_ACCOUNT_EMAIL",
+      "description": "Service account email from Google Cloud Console",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "GOOGLE_PRIVATE_KEY",
+      "description": "Private key from the service account JSON key file",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "GOOGLE_SPREADSHEET_ID",
+      "description": "The ID of the Google Sheet to write to",
+      "requiredAtBoot": false
+    }
+  ]
 }
