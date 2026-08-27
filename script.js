@@ -106,7 +106,12 @@ document.addEventListener("keydown", (e) => {
   else if (e.key === ".") inputNumber(".");
   else if (["+", "-", "*", "/"].includes(e.key)) inputOperator(e.key);
   else if (e.key === "Enter" || e.key === "=") inputEquals();
-  else if (e.key === "Escape") clearAll();
+  else if (e.key === "Escape" || e.key === "c" || e.key === "C") clearAll();
+  else if (e.key === "Backspace") {
+    if (waitingForOperand) return;
+    current = current.length > 1 ? current.slice(0, -1) : "0";
+    updateDisplay();
+  }
 });
 
 updateDisplay();
