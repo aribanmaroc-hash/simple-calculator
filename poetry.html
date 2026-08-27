@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إلقاء شعري</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/poetry.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <a href="/" class="back-link">← الآلة الحاسبة</a>
+      <h1 class="title">إلقاء شعري</h1>
+      <p class="subtitle">بدون آلات موسيقية</p>
+    </header>
+
+    <div class="poem-card">
+      <div class="verse" data-text="رَبَيتُهُ وَهُوَ فَرخٌ حَتّى ارتَاش">
+        <span class="hemistich">رَبَيتُهُ وَهُوَ فَرخٌ حَتّى ارتَاش</span>
+      </div>
+      <div class="verse-separator"></div>
+      <div class="verse" data-text="وَمَدّى الجَنحَينِ وَطار">
+        <span class="hemistich">وَمَدّى الجَنحَينِ وَطار</span>
+      </div>
+      <div class="verse-separator"></div>
+      <div class="verse" data-text="اللَّئيمُ وَنَساني">
+        <span class="hemistich">اللَّئيمُ وَنَساني</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="recite-btn" class="recite-btn">
+        <span class="recite-icon">🎙️</span>
+        <span class="recite-label">إلقاء</span>
+      </button>
+      <button id="stop-btn" class="stop-btn" disabled>
+        <span class="stop-label">إيقاف</span>
+      </button>
+    </div>
+
+    <div id="status" class="status"></div>
+  </div>
+  <script src="/poetry.js"></script>
+</body>
+</html>
